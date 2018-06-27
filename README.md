@@ -17,7 +17,7 @@ The following tests were written:
 - A test suite named `"New Feed Selection"`.
 - A test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
  
- In some tests a callback function (`loadFeed`) is used to ensure that feeds are loaded before they are tested.
+ Some tests use a callback function (`loadFeed`) to ensure that feeds are loaded before they are tested.
 
 # How to run
 
