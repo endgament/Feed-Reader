@@ -97,17 +97,30 @@ $(function() {
         it('ensures there is at least a single entry element', function() {
             expect($('.feed .entry').length).not.toBe(0);
         })
-
-         
     });     
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-
-
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        var feedInitial; // the variables will store the first feed 
+        var feedAfter;  // and the feed after that
+
+        beforeEach(function(done) { 
+            loadFeed(0, function() {
+                feedInitial = $('.feed').html();//load the first feed 
+                done();
+            });
+        });
+
+        it('changes the content when a new feed is loaded', function() {
+            loadFeed(1, function() {
+                feedAfter = $('.feed').html(); // load the second feed   
+            });
+            
+            expect(feedAfter).not.toEqual(feedInitial);       
+        })
     });
 }());
