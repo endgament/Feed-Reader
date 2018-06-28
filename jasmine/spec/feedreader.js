@@ -110,16 +110,15 @@ $(function() {
 
         beforeEach(function(done) { 
             loadFeed(0, function() {
-                feedInitial = $('.feed').html();//load the first feed 
+                feedInitial = $('.feed').html();//load the first feed
+                loadFeed(1, function() {
+                    feedAfter = $('.feed').html(); // load the second feed   
+                });
                 done();
             });
         });
 
         it('changes the content when a new feed is loaded', function() {
-            loadFeed(1, function() {
-                feedAfter = $('.feed').html(); // load the second feed   
-            });
-            
             expect(feedAfter).not.toEqual(feedInitial);       
         })
     });
