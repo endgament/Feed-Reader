@@ -31,7 +31,7 @@ $(function() {
         it('has a URL defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(allFeeds.url).toBe();
-                expect(allFeeds.url).not.toBe(0);
+                expect(allFeeds.url).not.toBe(null);
             }) 
         }) 
 
@@ -43,7 +43,7 @@ $(function() {
         it('has a name defined and not empty', function() {
             allFeeds.forEach(function(feed) {
                 expect(allFeeds.name).toBe();
-                expect(allFeeds.name).not.toBe(0);
+                expect(allFeeds.name).not.toBe(null);
             }) 
         }) 
 
